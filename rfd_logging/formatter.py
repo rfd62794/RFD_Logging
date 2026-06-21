@@ -4,6 +4,8 @@ import json
 import logging
 from datetime import datetime, timezone
 
+from rfd_logging.context import get_request_id
+
 _STANDARD_ATTRS: frozenset[str] = frozenset({
     "args", "created", "exc_info", "exc_text", "filename", "funcName",
     "levelname", "levelno", "lineno", "message", "module", "msecs",
@@ -54,6 +56,8 @@ class JsonFormatter(logging.Formatter):
             }
 
             request_id = extra.pop("request_id", None)
+            if request_id is None:
+                request_id = get_request_id()
             error = extra.pop("error", None)
 
             ms = int(record.msecs)
