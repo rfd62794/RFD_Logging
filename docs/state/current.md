@@ -2,14 +2,14 @@
 
 **Phase:** 1  
 **Date:** 2026-06-21  
-**Status:** Implementation complete — pending test certification
+**Status:** Phase 1 complete — floor certified
 
 ## Floor
 
 | Metric | Value |
 |---|---|
 | Target floor | 16/0/0 |
-| Certified floor | pending |
+| Certified floor | 16/0/0 ✓ |
 
 ## Deliverables
 
