@@ -5,6 +5,7 @@ import logging
 from datetime import datetime, timezone
 
 from rfd_logging.context import get_request_id
+from rfd_logging.redaction import redact
 
 _STANDARD_ATTRS: frozenset[str] = frozenset({
     "args", "created", "exc_info", "exc_text", "filename", "funcName",
@@ -59,6 +60,7 @@ class JsonFormatter(logging.Formatter):
             if request_id is None:
                 request_id = get_request_id()
             error = extra.pop("error", None)
+            extra = redact(extra)
 
             ms = int(record.msecs)
             ts = datetime.fromtimestamp(record.created, tz=timezone.utc)
