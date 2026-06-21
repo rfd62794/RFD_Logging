@@ -32,6 +32,10 @@ logs/
 *.suo
 *.user
 
+# Environment / secrets
+.env
+.env.*
+
 # OS
 .DS_Store
 Thumbs.db
