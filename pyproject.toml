@@ -1,0 +1,18 @@
+[project]
+name = "rfd-logging"
+version = "0.1.0"
+description = "Standardised JSON logging for RFD services"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/rfd62794/RFD_Logging"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
